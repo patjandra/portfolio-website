@@ -3,6 +3,3 @@ dist
 .astro
 .DS_Store
 .env
-
-# full resume has a phone number and GPA: add a public version deliberately, then remove this line
-public/Preston_Tjandra_Resume.pdf

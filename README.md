@@ -63,7 +63,7 @@ It is a static site, so any static host works. With Vercel or Cloudflare Pages:
 
 ## Before you publish
 
-- **Resume PDF**: the file is git-ignored on purpose, so the Resume button links to nothing on a fresh deploy. Add a public version (no phone number or GPA) as `public/Preston_Tjandra_Resume.pdf`, then delete its line from `.gitignore` so it gets committed.
+- **Resume PDF**: `public/Preston_Tjandra_Resume.pdf` is the full resume, including a phone number and GPA, and it is public in this repo on purpose. To change what the Resume button serves, replace that file.
 - **Photo**: `public/preston.jpg` was cropped from a compressed image. Swap in a full-quality square crop (800 px or more).
 - **Check the GitHub repos** linked from the projects are public.
 - **Interim** runs on synthetic patient data; a short note about that belongs on any case study page.
