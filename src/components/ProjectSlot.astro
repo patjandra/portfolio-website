@@ -1,0 +1,38 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+
+interface Props { project: CollectionEntry<'projects'> }
+const { project } = Astro.props;
+const d = project.data;
+const { Content } = await render(project);
+
+/* Each slot has its own scroll moment, and the layout alternates: yellow backdrop on slots 1 and 4, image on the left for even slots. */
+const wraps = ['firstwrap', 'secondwrap', 'thirdwrap', 'fourthwrap', 'fifthwrap', 'sixthwrap'];
+const yellow = d.slot === 1 || d.slot === 4;
+const flip = d.slot % 2 === 0;
+const mediaClass = d.image.kind === 'logo' ? 'media logo' : d.image.kind === 'full' ? 'media shot full' : 'media shot';
+---
+<div class:list={['first-wrap', 'gutter', { yellow }]} id={wraps[d.slot - 1]}>
+  <article class:list={['work', 'first', { flip }]} id={`a${d.slot}`} data-project={project.id}>
+    <div class="copy">
+      <p class="meta">
+        <span class="org">{d.org}</span>
+        {d.role && <span class="role">{d.role}</span>}
+        <span class="dates">{d.dates}</span>
+      </p>
+      <h3>{d.title}</h3>
+      <Content />
+      {d.facts.length > 0 && (
+        <ul class="facts">
+          {d.facts.map((f) => <li><b>{f.value}</b><span>{f.label}</span></li>)}
+        </ul>
+      )}
+      <ul class="tech" aria-label="Built with">
+        {d.tech.map((t) => <li>{t}</li>)}
+      </ul>
+      {d.github && <a class="go" href={d.github} target="_blank" rel="noopener">View on GitHub</a>}
+    </div>
+    <div class={mediaClass}><img src={d.image.src} alt={d.image.alt} loading="lazy" decoding="async" /></div>
+  </article>
+</div>

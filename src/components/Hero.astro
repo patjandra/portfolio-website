@@ -1,0 +1,19 @@
+---
+import { site } from '../config/site';
+---
+<header class="hero" id="hero">
+  <img class="portrait" src={site.portrait.src} width="800" height="800" alt={site.portrait.alt} fetchpriority="high" />
+  <p class="name">{site.name}<small>{site.tagline}</small></p>
+  <h1>{site.headline}</h1>
+  <p class="lede lede2">{site.aside}</p>
+  <p class="links">
+    <a href={`mailto:${site.email}`}>Email me</a>
+    <a href={site.resume} download>Resume</a>
+    <a href={site.github}>GitHub</a>
+    <a href={site.linkedin}>LinkedIn</a>
+  </p>
+  <p class="scrollcue">
+    <span class="only-live">Scroll to see my work! Or <a href="#projects-list">jump to the full list</a>, or <a href="?plain">view it without the animation</a>.</span>
+    <span class="only-static">Scroll to see my work!<span class="only-plain"> Or <a href="./">play the animated version</a>.</span></span>
+  </p>
+</header>

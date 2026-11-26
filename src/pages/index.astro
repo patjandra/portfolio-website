@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import StageFx from '../components/StageFx.astro';
+import ProjectSlot from '../components/ProjectSlot.astro';
+import Contact from '../components/Contact.astro';
+import RacketRain from '../components/RacketRain.astro';
+import SideIndex from '../components/SideIndex.astro';
+import ProjectList from '../components/ProjectList.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.slot - b.data.slot);
+---
+<BaseLayout>
+  <div class="motif" aria-hidden="true"></div>
+  <SideIndex projects={projects} />
+
+  <div class="stage" id="stage">
+    <div class="pin">
+      <Hero />
+      <StageFx />
+      {projects.map((p) => <ProjectSlot project={p} />)}
+      <Contact />
+      <RacketRain />
+    </div>
+  </div>
+
+  <main>
+    <ProjectList projects={projects} />
+  </main>
+
+  <script>
+    import '../scripts/main';
+  </script>
+</BaseLayout>

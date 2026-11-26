@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { projects: CollectionEntry<'projects'>[] }
+const { projects } = Astro.props;
+---
+<section class="all" id="projects-list" aria-labelledby="all-h">
+  <h2 id="all-h">All the work.</h2>
+  <ol>
+    {projects.map((p) => (
+      <li>
+        <a class="row" href={`#${p.id}`}>
+          <span class="t">{p.data.title}</span>
+          <span class="o">{p.data.org}, {p.data.dates}</span>
+        </a>
+        {p.data.github && <a class="gh" href={p.data.github} target="_blank" rel="noopener">GitHub</a>}
+      </li>
+    ))}
+  </ol>
+</section>

@@ -1,0 +1,11 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { projects: CollectionEntry<'projects'>[] }
+const { projects } = Astro.props;
+---
+<nav class="index" aria-label="Work">
+  <span class="marker" aria-hidden="true"></span>
+  <ol>
+    {projects.map((p) => <li><a href={`#a${p.data.slot}`}>{p.data.short}</a></li>)}
+  </ol>
+</nav>

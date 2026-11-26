@@ -1,0 +1,14 @@
+---
+import { site } from '../config/site';
+---
+<div class="first-wrap gutter" id="seventhwrap">
+  <section class="contact cta" id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">{site.closing}</h2>
+    <p>{site.closingNote}</p>
+    <p class="links" style="margin-top:1.2rem">
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+      <a href={site.github}>GitHub</a>
+      <a href={site.linkedin}>LinkedIn</a>
+    </p>
+  </section>
+</div>
