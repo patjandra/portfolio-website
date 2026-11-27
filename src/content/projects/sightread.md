@@ -13,4 +13,4 @@ image:
   alt: SightRead with guitar sheet music and gaze tracking controls
   kind: full
 ---
-Your webcam follows where you're looking on the page and scrolls the sheet music for you, so musicians can keep both hands on the instrument. Calibration and smoothing keep it steady even with a noisy webcam picture.
+Your webcam follows where you're looking on the page and scrolls the sheet music for you, allowing musicians to play uninterrupted. Calibration and smoothing keep it steady even with a noisy webcam picture.
