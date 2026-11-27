@@ -31,7 +31,12 @@ const mediaClass = d.image.kind === 'logo' ? 'media logo' : d.image.kind === 'fu
       <ul class="tech" aria-label="Built with">
         {d.tech.map((t) => <li>{t}</li>)}
       </ul>
-      {d.github && <a class="go" href={d.github} target="_blank" rel="noopener">View on GitHub</a>}
+      {(d.github || d.demo) && (
+        <div class="actions">
+          {d.github && <a class="go" href={d.github} target="_blank" rel="noopener">View on GitHub</a>}
+          {d.demo && <a class="go" href={d.demo} target="_blank" rel="noopener">Try it out</a>}
+        </div>
+      )}
     </div>
     <div class={mediaClass}><img src={d.image.src} alt={d.image.alt} loading="lazy" decoding="async" /></div>
   </article>

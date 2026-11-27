@@ -13,6 +13,7 @@ const { projects } = Astro.props;
           <span class="o">{p.data.org}, {p.data.dates}</span>
         </a>
         {p.data.github && <a class="gh" href={p.data.github} target="_blank" rel="noopener">GitHub</a>}
+        {p.data.demo && <a class="gh" href={p.data.demo} target="_blank" rel="noopener">Try it out</a>}
       </li>
     ))}
   </ol>

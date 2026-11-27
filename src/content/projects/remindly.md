@@ -11,6 +11,7 @@ facts:
   - { value: "100+", label: "scheduled events" }
 tech: [React, Tailwind, Firebase, Cloud Functions, Gemini API, Google Calendar, Text-to-speech]
 github: https://github.com/patjandra/Remindly
+demo: https://remindly-web.web.app/
 image:
   src: /img/remindly.jpg
   alt: Remindly landing page showing a pirate captain voice reminder

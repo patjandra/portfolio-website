@@ -8,6 +8,7 @@ facts:
   - { value: "~30", label: "frames a second of gaze tracking" }
 tech: [JavaScript, React, MediaPipe]
 github: https://github.com/patjandra/SightRead
+demo: https://sightread.ing/
 image:
   src: /img/sightread.jpg
   alt: SightRead with guitar sheet music and gaze tracking controls
